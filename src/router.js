@@ -6,6 +6,8 @@ import HomePage from './components/HomePage.vue';
 import AboutPage from './components/AboutPage.vue';
 import ProjectsPage from './components/ProjectsPage.vue';
 import ContactPage from './components/ContactPage.vue';
+import TravelBlog from './components/TravelBlog.vue';
+import CricketScoring from './components/CricketScoring.vue';
 
 Vue.use(Router);
 
@@ -31,6 +33,16 @@ export default new Router({
       path: '/contact',
       name: 'contact',
       component: ContactPage,
+    },
+    {
+      path: '/travel-blog',
+      name: 'travel-blog',
+      component: TravelBlog,
+    },
+    {
+      path: '/cricket-scoring',
+      name: 'cricket-scoring',
+      component: CricketScoring,
     },
   ],
 });

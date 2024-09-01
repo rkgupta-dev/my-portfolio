@@ -13,19 +13,19 @@
               </h1>
               <h1 class="display-4"><strong>Developer</strong></h1>
               <p class="lead">
-                <strong
-                  >Hi, I'm Rohit Kumar Gupta, a passionate frontend developer
+                <strong>
+                  Hi, I'm Rohit Kumar Gupta, a passionate frontend developer
                   who loves creating interactive and responsive web
-                  applications.</strong
-                >
+                  applications.
+                </strong>
               </p>
               <!-- Buttons -->
-              <b-button to="/contact" variant="primary" class="mr-2"
-                >Get in Touch</b-button
-              >
-              <b-button to="/projects" variant="outline-dark"
-                >Browse Projects</b-button
-              >
+              <b-button to="/contact" variant="primary" class="mr-2">
+                Get in Touch
+              </b-button>
+              <b-button to="/projects" variant="outline-dark">
+                Browse Projects
+              </b-button>
             </div>
           </div>
         </b-col>
@@ -36,21 +36,24 @@
             style="max-width: 90%; height: auto"
           />
         </b-col>
-      </b-row>
-      <ProjectsPage />
+      </b-row>    
     </b-container>
+    <hr/>
+
+    <!-- Projects Section -->
+    <ProjectsPage />
   </div>
 </template>
 
 <script>
-import ProjectsPage from '../components/ProjectsPage.vue';
+import ProjectsPage from '@/components/ProjectsPage.vue'; // Adjust the path accordingly
 
 export default {
   name: 'HomePage',
   components: {
-    ProjectsPage,
+    ProjectsPage
   }
-}
+};
 </script>
 
 <style scoped>
@@ -66,16 +69,7 @@ export default {
     opacity: 1;
   }
 }
-</style>
 
-<script>
-export default {
-  name: "HomePage",
-};
-</script>
-
-<style scoped>
-/* Add any additional styling here if needed */
 .fade-in {
   animation: fadeIn 1s ease-in-out;
 }
@@ -86,7 +80,7 @@ export default {
     transform: translateY(20px);
   }
   100% {
-    opacity: 3;
+    opacity: 1;
     transform: translateY(0);
   }
 }
