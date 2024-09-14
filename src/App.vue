@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- Navbar -->
-    <b-navbar toggleable="lg" variant="primary" class="bg-primary">
+    <b-navbar toggleable="lg" variant="primary" class="bg-primary py-1">
       <div class="mr-2">
       <b-img
         rounded="circle"
