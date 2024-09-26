@@ -3,7 +3,7 @@
     <!-- Hero Section -->
     <b-container class="text-left my-4 fade-in">
       <b-row>
-        <b-col md="6" class="d-flex align-items-center">
+        <b-col md="6" sm="12" class="d-flex align-items-center">
           <div>
             <h1 class="text-muted">Welcome to My Portfolio</h1>
             <div class="my-4">
@@ -29,7 +29,7 @@
             </div>
           </div>
         </b-col>
-        <b-col md="6" class="d-flex justify-content-center">
+        <b-col md="6" sm="12" class="d-flex justify-content-center">
           <b-img
             :src="require('@/assets/dp1.png')"
             alt="Web Developer"
