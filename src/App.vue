@@ -1,15 +1,15 @@
 <template>
   <div id="app">
     <!-- Navbar -->
-    <b-navbar toggleable="lg" variant="primary" class="bg-primary py-1">
-      <div class="mr-2">
+    <b-navbar toggleable="lg" variant="primary" class="bg-primary py-0 sticky-top">
+      <!-- <div class="mr-2">
       <b-img
         rounded="circle"
         :src="require('@/assets/dp1.png')"
         alt="my image"
         style="width: 40px; height: 40px"
       ></b-img>
-      </div>
+      </div> -->
       <b-navbar-brand to="/" class="text-light" >My Portfolio</b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
