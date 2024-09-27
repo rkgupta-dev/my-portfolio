@@ -7,7 +7,7 @@
           <div>
             <h1 class="text-muted">Welcome to My Portfolio</h1>
             <div class="my-4">
-              <h5>Hey, I'm Rohit 👋🏻</h5>
+              <h5 class="text-primary">Hey, I'm Rohit 👋🏻</h5>
               <h1 class="display-4">
                 <strong><span class="text-success">Front</span>end</strong>
               </h1>

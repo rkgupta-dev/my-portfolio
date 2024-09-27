@@ -1,16 +1,8 @@
 <template>
   <div id="app">
     <!-- Navbar -->
-    <b-navbar toggleable="lg" variant="primary" class="py-1 sticky-top">
-      <!-- <div class="mr-2">
-      <b-img
-        rounded="circle"
-        :src="require('@/assets/dp1.png')"
-        alt="my image"
-        style="width: 40px; height: 40px"
-      ></b-img>
-      </div> -->
-      <b-navbar-brand to="/" class="text-light">My Portfolio</b-navbar-brand>
+    <b-navbar :variant="navVariant" toggleable="lg" class="py-1 sticky-top shadow-sm">
+      <b-navbar-brand to="/" class="text-dark">My Portfolio</b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
@@ -30,13 +22,31 @@
 <script>
 export default {
   name: "App",
+  data() {
+    return {
+      navVariant: "light", // Default variant
+    };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      if (window.scrollY > 30) {
+        // Change variant when scrolled more than 100px
+        this.navVariant = "info";
+      } else {
+        // Revert to primary variant
+        this.navVariant = "light";
+      }
+    },
+  },
 };
 </script>
 
 <style scoped>
-/* body {
-  font-family: "Arial", sans-serif;
-  background-color: red;
-} */
-
+/* Additional styles can be added if necessary */
 </style>

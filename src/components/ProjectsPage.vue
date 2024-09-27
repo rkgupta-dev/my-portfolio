@@ -14,7 +14,7 @@
             :img-src="project.img"
             :img-alt="project.title"
             img-top
-            class="fade-in my-4"
+            class="fade-in my-4  project-card"
           >
             <b-card-text>
               {{ project.description }}
@@ -143,7 +143,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 h1 {
   font-size: 2.5rem;
   font-weight: bold;
@@ -188,5 +188,13 @@ li {
     opacity: 3;
     transform: translateY(0);
   }
+}
+/* Image zoom effect on hover */
+.project-card img {
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.project-card img:hover {
+  transform: scale(1.05); /* Slight zoom effect */
 }
 </style>
