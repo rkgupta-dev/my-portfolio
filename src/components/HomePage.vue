@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <b-container class="text-left my-4 fade-in ">
+    <b-container class="text-left my-4 fade-in">
       <b-row>
         <b-col md="6" class="d-flex align-items-center">
           <div>
@@ -40,18 +40,20 @@
     </b-container>
     <hr/>
 
-    <!-- Projects Section -->
+    <AboutPage />
     <ProjectsPage />
   </div>
 </template>
 
 <script>
 import ProjectsPage from '@/components/ProjectsPage.vue'; // Adjust the path accordingly
+import AboutPage from '@/components/AboutPage.vue';
 
 export default {
   name: 'HomePage',
   components: {
-    ProjectsPage
+    ProjectsPage,
+    AboutPage
   }
 };
 </script>
