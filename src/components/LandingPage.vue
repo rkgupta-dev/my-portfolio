@@ -279,23 +279,23 @@
               >
                 Email
               </h3>
-              <p>info@domainname.com</p>
-              <p>support@domain.com</p>
+              <p>rohitkrgupta333@gmail.com</p>
+              <!-- <p>support@domain.com</p> -->
 
               <h3
                 class="h5 font-weight-semibold border-left pl-2 border-danger mb-3 mt-4"
               >
-                Visit My Studio
+                Visit My Office
               </h3>
-              <p>Warnwe Park Streetperrine,</p>
-              <p>FL 33157 New York City</p>
+              <p>Ontrack Technologies Pvt. LTD.,</p>
+              <p>Indiranagar, Bengaluru 560008</p>
 
               <h3
                 class="h5 font-weight-semibold border-left pl-2 border-danger mb-3 mt-4"
               >
                 Phone
               </h3>
-              <p>+01 123 654 8096</p>
+              <p>+91 7079812442</p>
 
               <div class="d-flex justify-content-start mt-4">
                 <b-icon icon="facebook" variant="dark" class="mr-2" />
@@ -316,7 +316,7 @@
               </h3>
               <b-form @submit.prevent="onSubmit">
                 <b-row>
-                  <b-col md="6">
+                  <b-col md="6" class="mb-2">
                     <b-form-input placeholder="Name *" required></b-form-input>
                   </b-col>
                   <b-col md="6">
@@ -334,13 +334,45 @@
                 ></b-form-input>
                 <b-form-textarea
                   placeholder="Your message *"
-                  rows="6"
+                  rows="4"
                   required
                 ></b-form-textarea>
                 <b-button type="submit" variant="danger" class="mt-3"
                   >Contact Me</b-button
                 >
               </b-form>
+
+              <!-- Toast -->
+              <b-toast
+                id="toast"
+                variant="success"
+                solid
+                ref="toast"
+                :auto-hide="true"
+                :delay="3000"
+              >
+                Your message has been sent! We’ll review it and get back to you
+                within 24 hours.
+              </b-toast>
+            </b-card>
+          </b-col>
+
+          <b-col class="my-4">
+            <h3
+                class="font-weight-semibold border-left pl-2 border-danger mb-3"
+              >
+                Our Location
+              </h3>
+            <b-card>
+                <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.995889009668!2d77.63960807412035!3d12.972114514868895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16a77f100f77%3A0xc5ec8c9958653929!2sOntrack%20%7C%20Bike%20Rentals%20in%20Bangalore%20-%20Corporate%20Office!5e0!3m2!1sen!2sin!4v1727532902695!5m2!1sen!2sin"
+              width="100%"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
             </b-card>
           </b-col>
         </b-row>
@@ -383,6 +415,10 @@ export default {
   methods: {
     handleScroll() {
       this.isScrolled = window.scrollY > 30; // Change this value as needed
+    },
+    onSubmit() {
+      // Show toast notification on form submission
+      this.$refs.toast.show();
     },
   },
   mounted() {
