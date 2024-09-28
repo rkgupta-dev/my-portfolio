@@ -359,24 +359,80 @@
 
           <b-col class="my-4">
             <h3
-                class="font-weight-semibold border-left pl-2 border-danger mb-3"
-              >
-                Our Location
-              </h3>
+              class="font-weight-semibold border-left pl-2 border-danger mb-3"
+            >
+              Our Location
+            </h3>
             <b-card>
-                <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.995889009668!2d77.63960807412035!3d12.972114514868895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16a77f100f77%3A0xc5ec8c9958653929!2sOntrack%20%7C%20Bike%20Rentals%20in%20Bangalore%20-%20Corporate%20Office!5e0!3m2!1sen!2sin!4v1727532902695!5m2!1sen!2sin"
-              width="100%"
-              height="300"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.995889009668!2d77.63960807412035!3d12.972114514868895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16a77f100f77%3A0xc5ec8c9958653929!2sOntrack%20%7C%20Bike%20Rentals%20in%20Bangalore%20-%20Corporate%20Office!5e0!3m2!1sen!2sin!4v1727532902695!5m2!1sen!2sin"
+                width="100%"
+                height="300"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
             </b-card>
           </b-col>
         </b-row>
       </b-container>
+
+      <footer class="bg-light border-top">
+        <div class="container py-4 py-md-5">
+          <b-row>
+            <!-- About Section -->
+            <b-col md="4" class="mb-4 mb-md-0">
+              <h3 class="h5 font-weight-bold">Rohit Kr. Gupta</h3>
+              <p class="text-muted">
+                A passionate web developer crafting beautiful and functional
+                websites.
+              </p>
+            </b-col>
+
+            <!-- Quick Links Section -->
+            <b-col md="4" class="mb-4 mb-md-0">
+              <h3 class="h5 font-weight-bold">Quick Links</h3>
+              <nav class="d-flex flex-row flex-wrap">
+                <b-link href="/" class="text-muted mr-3">Home</b-link>
+                <b-link href="#about" class="text-muted mr-3">About</b-link>
+                <b-link href="#projects" class="text-muted mr-3"
+                  >Projects</b-link
+                >
+                <b-link href="#contact" class="text-muted">Contact</b-link>
+              </nav>
+            </b-col>
+
+            <!-- Contact Info Section -->
+            <b-col md="4">
+              <h3 class="h5 font-weight-bold">Follow Me</h3>
+              <div class="d-flex">
+                <b-link href="https://github.com/rkgupta-dev" class="text-muted mr-3">
+                  <b-icon icon="github" aria-hidden="true"></b-icon>
+                  <span class="sr-only">GitHub</span>
+                </b-link>
+                <b-link href="https://www.linkedin.com/in/rohit-kr-gupta-921760208/" class="text-muted mr-3">
+                  <b-icon icon="linkedin" aria-hidden="true"></b-icon>
+                  <span class="sr-only">LinkedIn</span>
+                </b-link>
+                <b-link href="https://twitter.com" class="text-muted mr-3">
+                  <b-icon icon="twitter" aria-hidden="true"></b-icon>
+                  <span class="sr-only">Twitter</span>
+                </b-link>
+                <b-link href="mailto:john@example.com" class="text-muted">
+                  <b-icon icon="envelope" aria-hidden="true"></b-icon>
+                  <span class="sr-only">Email</span>
+                </b-link>
+              </div>
+            </b-col>
+          </b-row>
+
+          <!-- Footer Bottom Section -->
+          <div class="mt-4 pt-4 border-top text-center text-muted">
+            <p>&copy; {{ currentYear }} Rohit Kr Gupta. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   </div>
 </template>
@@ -387,6 +443,7 @@ export default {
   data() {
     return {
       isScrolled: false,
+      currentYear: new Date().getFullYear(),
       projects: [
         {
           title: "Portfolio Website",
