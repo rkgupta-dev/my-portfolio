@@ -29,7 +29,7 @@
   
     <!-- Start My Skills Page in ProjectPage.vue-->
     <div>
-      <b-container fluid class="p-4">
+      <b-container fluid class="">
         <div>
           <h1 class="text-center mb-4">My Skills</h1>
           <b-row>
