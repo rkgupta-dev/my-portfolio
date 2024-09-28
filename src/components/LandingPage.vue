@@ -461,7 +461,7 @@
                   <b-icon icon="twitter" aria-hidden="true"></b-icon>
                   <span class="sr-only">Twitter</span>
                 </b-link>
-                <b-link href="" class="text-light">
+                <b-link href="rohitkrgupta@gmail.com" class="text-light">
                   <b-icon icon="envelope" aria-hidden="true"></b-icon>
                   <span class="sr-only">Email</span>
                 </b-link>
