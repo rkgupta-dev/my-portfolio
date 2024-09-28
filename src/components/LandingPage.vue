@@ -46,7 +46,7 @@
                 </strong>
               </p>
               <!-- Buttons -->
-              <b-button to="#contact" variant="primary" class="mr-2">
+              <b-button href="#contact" variant="primary" class="mr-2">
                 Get in Touch
               </b-button>
               <b-button href="#projects" variant="outline-dark">
@@ -72,7 +72,10 @@
       <b-container class="bg-light" fluid>
         <b-row>
           <b-col md="12" class="mt-5">
-            <h1 class="text-center">About Me</h1>
+            <h1 class="text-center">
+              <span class="text-danger">—</span> About Me
+              <span class="text-danger">—</span>
+            </h1>
             <p class="lead text-center">
               I’m a creative developer passionate about using technology to
               solve real-world problems and improve user experiences in the
@@ -108,7 +111,12 @@
                 <b-button to="/projects" variant="primary" class="mr-2">
                   Download CV <b-icon icon="cloud-arrow-down"></b-icon>
                 </b-button>
-                <b-button to="/projects" variant="dark">
+                <b-button
+                  to="/projects"
+                  variant="dark"
+                  v-b-tooltip.hover
+                  title="More information About Me."
+                >
                   More Info <b-icon icon="info-circle"></b-icon>
                 </b-button>
               </div>
@@ -172,86 +180,46 @@
     </div>
 
     <!-- Projects Section -->
+    <div id="projects">
+      <b-container class="">
+        <b-row>
+          <b-col md="12" class="mt-5">
+            <h1 class="text-center">
+              <span class="text-danger">—</span> Projects
+              <span class="text-danger">—</span>
+            </h1>
+          </b-col>
+        </b-row>
+
+        <b-row>
+          <b-col
+            md="4"
+            v-for="(project, index) in projects"
+            :key="index"
+            class="mb-4 fade-in"
+          >
+            <b-card
+              :title="project.title"
+              :img-src="project.img"
+              :img-alt="project.title"
+              img-top
+              class="fade-in my-4 project-card"
+            >
+              <b-card-text>
+                {{ project.description }}
+              </b-card-text>
+              <b-button variant="primary" :href="project.link" target="_blank">
+                View Project
+              </b-button>
+            </b-card>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
+
+    <!-- Projects Section -->
     <div id="projects" class="mt-5">
       <b-container>
-        <div class="my-5">
-          <h1 class="text-center fade-in">Projects</h1>
-          <b-row>
-            <b-col
-              md="4"
-              v-for="(project, index) in projects"
-              :key="index"
-              class="mb-4 fade-in"
-            >
-              <b-card
-                :title="project.title"
-                :img-src="project.img"
-                :img-alt="project.title"
-                img-top
-                class="fade-in my-4 project-card"
-              >
-                <b-card-text>
-                  {{ project.description }}
-                </b-card-text>
-                <b-button
-                  variant="primary"
-                  :href="project.link"
-                  target="_blank"
-                >
-                  View Project
-                </b-button>
-              </b-card>
-            </b-col>
-          </b-row>
-        </div>
-
-        <!-- My Skills -->
-        <div>
-          <b-container fluid>
-            <h1 class="text-center mb-4">My Skills</h1>
-            <b-row>
-              <b-col md="4" class="mb-3">
-                <b-card class="text-center skill-card">
-                  <h4 class="text-info">Web Design</h4>
-                  <hr />
-                  <ul class="list-unstyled">
-                    <li>UI/UX Design</li>
-                    <li>Responsive Design</li>
-                    <li>Wireframing</li>
-                    <li>User Research</li>
-                  </ul>
-                </b-card>
-              </b-col>
-
-              <b-col md="4" class="mb-3">
-                <b-card class="text-center skill-card">
-                  <h4 class="text-info">Frontend</h4>
-                  <hr />
-                  <ul class="list-unstyled">
-                    <li>JavaScript</li>
-                    <li>ReactJS</li>
-                    <li>NextJS</li>
-                    <li>CSS3</li>
-                  </ul>
-                </b-card>
-              </b-col>
-
-              <b-col md="4" class="mb-3">
-                <b-card class="text-center skill-card">
-                  <h4 class="text-info">Backend</h4>
-                  <hr />
-                  <ul class="list-unstyled">
-                    <li>NodeJs</li>
-                    <li>MongoDB</li>
-                    <li>ExpressJS</li>
-                    <li>Vercel</li>
-                  </ul>
-                </b-card>
-              </b-col>
-            </b-row>
-          </b-container>
-        </div>
-
         <!-- My Story -->
         <div>
           <b-container fluid class="p-4">
@@ -287,6 +255,95 @@
             </b-row>
           </b-container>
         </div>
+      </b-container>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact">
+      <b-container class="">
+        <b-row>
+          <b-col md="12" class="mt-5">
+            <h1 class="text-center">
+              <span class="text-danger">—</span> Contact Me
+              <span class="text-danger">—</span>
+            </h1>
+          </b-col>
+        </b-row>
+        <!-- Grid Section -->
+        <b-row>
+          <!-- Contact Info Column -->
+          <b-col md="6" class="mb-4">
+            <b-card class="p-4 shadow-sm">
+              <h3
+                class="h5 font-weight-semibold border-left pl-2 border-danger mb-3"
+              >
+                Email
+              </h3>
+              <p>info@domainname.com</p>
+              <p>support@domain.com</p>
+
+              <h3
+                class="h5 font-weight-semibold border-left pl-2 border-danger mb-3 mt-4"
+              >
+                Visit My Studio
+              </h3>
+              <p>Warnwe Park Streetperrine,</p>
+              <p>FL 33157 New York City</p>
+
+              <h3
+                class="h5 font-weight-semibold border-left pl-2 border-danger mb-3 mt-4"
+              >
+                Phone
+              </h3>
+              <p>+01 123 654 8096</p>
+
+              <div class="d-flex justify-content-start mt-4">
+                <b-icon icon="facebook" variant="dark" class="mr-2" />
+                <b-icon icon="twitter" variant="dark" class="mr-2" />
+                <b-icon icon="instagram" variant="dark" class="mr-2" />
+                <b-icon icon="linkedin" variant="dark" />
+              </div>
+            </b-card>
+          </b-col>
+
+          <!-- Contact Form Column -->
+          <b-col md="6" class="mb-4">
+            <b-card class="p-4 shadow-sm">
+              <h3
+                class="h5 font-weight-semibold border-left pl-2 border-danger mb-3"
+              >
+                Get In Touch
+              </h3>
+              <b-form @submit.prevent="onSubmit">
+                <b-row>
+                  <b-col md="6">
+                    <b-form-input placeholder="Name *" required></b-form-input>
+                  </b-col>
+                  <b-col md="6">
+                    <b-form-input
+                      type="email"
+                      placeholder="Email *"
+                      required
+                    ></b-form-input>
+                  </b-col>
+                </b-row>
+                <b-form-input
+                  placeholder="Subject *"
+                  class="my-3"
+                  required
+                ></b-form-input>
+                <b-form-textarea
+                  placeholder="Your message *"
+                  rows="6"
+                  required
+                ></b-form-textarea>
+                <b-button type="submit" variant="danger" class="mt-3"
+                  >Contact Me</b-button
+                >
+              </b-form>
+            </b-card>
+          </b-col>
+        </b-row>
       </b-container>
     </div>
   </div>
@@ -373,6 +430,22 @@ h1 {
 }
 
 .skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for projects cards */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  background-image: radial-gradient(
+    circle 993px at 0.5% 50.5%,
+    rgba(137, 171, 245, 0.37) 0%,
+    rgba(245, 247, 252, 1) 100.2%
+  );
+}
+
+.project-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
