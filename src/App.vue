@@ -1,11 +1,11 @@
 <template>
   <div id="app">
 
-    <router-view></router-view>
-  
+    
     <LandingPage/>
     <BottomNavbar/>
-   
+    
+    <!-- <router-view></router-view> -->
   </div>
 </template>
 
