@@ -115,7 +115,7 @@
                   to="/projects"
                   variant="dark"
                   v-b-tooltip.hover
-                  title="More information About Me."
+                  title="More Information About Me."
                 >
                   More Info <b-icon icon="info-circle"></b-icon>
                 </b-button>
@@ -257,7 +257,7 @@
         </div>
       </b-container>
     </div>
-    <div id="projects" class="mt-5">
+    <div id="blog" class="mt-5">
       <b-container>
         <!-- My Story -->
         <div class="container my-4">
