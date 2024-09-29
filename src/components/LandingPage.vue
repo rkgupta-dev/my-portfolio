@@ -361,9 +361,10 @@
                   ><i class="fa-brands fa-facebook"></i>
                 </a>
                 <a
-                  href="rohitkrgupta@gmail.com"
+                  href="mailto:rohitkrgupta333@gmail.com"
                   class="h3 text-warning mr-3 icon-scale"
-                  ><i class="fa-solid fa-envelope"></i>
+                >
+                  <i class="fa-solid fa-envelope"></i>
                 </a>
               </div>
             </b-card>
@@ -492,9 +493,10 @@
                   ><i class="fa-brands fa-facebook"></i>
                 </a>
                 <a
-                  href="rohitkrgupta@gmail.com"
+                  href="mailto:rohitkrgupta333@gmail.com"
                   class="h4 text-light mr-3 icon-scale"
-                  ><i class="fa-solid fa-envelope"></i>
+                >
+                  <i class="fa-solid fa-envelope"></i>
                 </a>
               </div>
             </b-col>
