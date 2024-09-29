@@ -1,8 +1,8 @@
 <template>
   <div id="app">
   
+    <HomePage />
   <LandingPage/>
-  <HomePage />
   <BottomNavbar/>
     <!-- Router View -->
     <!-- <router-view></router-view> -->

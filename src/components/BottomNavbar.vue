@@ -18,7 +18,7 @@
             class="p-2 nav-item"
             exact-active-class="active"
             :class="{
-              'text-warning': activeSection === 'home',
+              'text-primary': activeSection === 'home',
               'text-dark': activeSection !== 'home',
             }"
             @click="setActiveSection('home')"
@@ -45,7 +45,7 @@
             class="p-2 nav-item"
             exact-active-class="active"
             :class="{
-              'text-primary': activeSection === 'projects',
+              'text-warning': activeSection === 'projects',
               'text-dark': activeSection !== 'projects',
             }"
             v-b-tooltip="'Projects'"
