@@ -1,9 +1,9 @@
 <template>
   <div id="app">
   
+    <LandingPage/>
+    <BottomNavbar/>
     <HomePage />
-  <LandingPage/>
-  <BottomNavbar/>
     <!-- Router View -->
     <!-- <router-view></router-view> -->
   </div>

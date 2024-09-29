@@ -1,40 +1,53 @@
-<template>
-  <div class="social-icons">
-    <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-      <b-icon icon="fab fa-github" class="icon" />
-    </a>
-    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-      <b-icon icon="fab fa-linkedin" class="icon" />
-    </a>
-    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-      <b-icon icon="fab fa-instagram" class="icon" />
-    </a>
-    <a href="mailto:youremail@example.com">
-      <b-icon icon="fas fa-envelope" class="icon" />
-    </a>
+<!-- <template>
+  <div>
+    <!-- Button to open the camera -->
+    <b-button @click="openCamera" variant="primary">Open Camera</b-button>
+
+    <!-- Hidden file input for capturing the image -->
+    <input
+      ref="cameraInput"
+      type="file"
+      accept="image/*"
+      capture="environment"
+      @change="captureImage"
+      style="display: none;"
+    />
+
+    <!-- Display the captured image -->
+    <div v-if="imageData">
+      <h5>Captured Image:</h5>
+      <b-img :src="imageData" alt="Captured Image" fluid />
+    </div>
   </div>
 </template>
 
 <script>
-import "@fortawesome/fontawesome-free/css/all.min.css";
 export default {
-  name: 'SocialMediaIcons',
+  data() {
+    return {
+      imageData: null, // Stores the captured image data
+    };
+  },
+  methods: {
+    // This method triggers the hidden input when the button is clicked
+    openCamera() {
+      this.$refs.cameraInput.click();
+    },
+    // This method handles the image selection and renders it
+    captureImage(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          this.imageData = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    },
+  },
 };
 </script>
 
 <style scoped>
-.social-icons {
-  display: flex;
-  gap: 15px; /* Space between icons */
-}
-
-.icon {
-  font-size: 24px; /* Size of icons */
-  color: #333; /* Default icon color */
-  transition: color 0.3s; /* Smooth color transition */
-}
-
-.icon:hover {
-  color: #007bff; /* Color change on hover */
-}
-</style>
+/* Add any custom styles here */
+</style> -->
