@@ -112,7 +112,7 @@
                   Download CV <b-icon icon="cloud-arrow-down"></b-icon>
                 </b-button>
                 <b-button
-                  to="/projects"
+                  @click="$router.push('/cricket-scoring')"
                   variant="dark"
                   v-b-tooltip.hover
                   title="More Information About Me."
