@@ -323,7 +323,7 @@
               >
                 Visit My Office
               </h3>
-              <p>Ontrack Technologies Pvt. LTD.,</p>
+              <p>Ontrack Technologies Pvt. Ltd.,</p>
               <p>Indiranagar, Bengaluru 560008</p>
 
               <h3
