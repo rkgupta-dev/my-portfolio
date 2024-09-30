@@ -60,6 +60,7 @@
             :src="require('@/assets/dp1.png')"
             alt="Web Developer"
             style="max-width: 90%; height: auto"
+            class="hover-effect"
           />
         </b-col>
       </b-row>
@@ -669,5 +670,15 @@ h1 {
   60% {
     transform: translateY(-5px); /* Move down slightly */
   }
+}
+
+.hover-effect {
+  transition: transform 0.6s, filter 0.6s;
+  filter: grayscale(100%); /* Start with black and white */
+}
+
+.hover-effect:hover {
+  transform: scale(1.05); /* Optional: slight scaling on hover */
+  filter: grayscale(0%); /* Transition to full color */
 }
 </style>
