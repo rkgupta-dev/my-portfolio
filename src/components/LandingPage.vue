@@ -672,6 +672,7 @@ h1 {
   }
 }
 
+/* main image effect */
 .hover-effect {
   transition: transform 0.6s, filter 0.6s;
   filter: grayscale(100%); /* Start with black and white */
