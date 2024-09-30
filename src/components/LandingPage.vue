@@ -461,8 +461,9 @@
                 <b-link href="/" class="text-light mr-3">Home</b-link>
                 <b-link href="#about" class="text-light mr-3">About</b-link>
                 <b-link href="#projects" class="text-light mr-3"
-                  >Projects</b-link
+                >Projects</b-link
                 >
+                <b-link href="#blog" class="text-light mr-3">Blog</b-link>
                 <b-link href="#contact" class="text-light">Contact</b-link>
               </nav>
             </b-col>
