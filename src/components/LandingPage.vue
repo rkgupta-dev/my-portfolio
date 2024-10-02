@@ -274,7 +274,7 @@
               md="4"
               class="mb-4"
             >
-              <b-card>
+              <b-card class="containers">
                 <b-img
                   :src="post.imageUrl"
                   :alt="post.title"
@@ -462,7 +462,7 @@
                 <b-link href="/" class="text-light mr-3">Home</b-link>
                 <b-link href="#about" class="text-light mr-3">About</b-link>
                 <b-link href="#projects" class="text-light mr-3"
-                >Projects</b-link
+                  >Projects</b-link
                 >
                 <b-link href="#blog" class="text-light mr-3">Blog</b-link>
                 <b-link href="#contact" class="text-light">Contact</b-link>
@@ -681,5 +681,33 @@ h1 {
 .hover-effect:hover {
   transform: scale(1.05); /* Optional: slight scaling on hover */
   filter: grayscale(0%); /* Transition to full color */
+}
+
+.containers {
+  position: relative;
+  padding: 3px;
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  border-radius: 0.9em;
+  transition: all 0.4s ease;
+}
+
+.containers::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border-radius: 0.9em;
+  z-index: -10;
+  filter: blur(0);
+  transition: filter 0.4s ease;
+}
+
+.containers:hover::before {
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  filter: blur(1.2em);
+}
+
+.containers:active::before {
+  filter: blur(0.2em);
 }
 </style>
