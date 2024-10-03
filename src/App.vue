@@ -1,25 +1,17 @@
 <template>
   <div id="app">
-
-    
-    <LandingPage/>
-    <BottomNavbar/>
-    
-    <!-- <router-view></router-view> -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import LandingPage from './components/LandingPage.vue';
-import BottomNavbar from './components/BottomNavbar.vue';
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-   LandingPage,
-   BottomNavbar,
-  }
-}
+   
+  },
+};
 </script>
 
 <style scoped>

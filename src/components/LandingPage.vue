@@ -11,7 +11,7 @@
       @scroll="handleScroll"
     >
       <b-navbar-brand
-        href="/"
+        to="/"
         :class="{ 'text-light': isScrolled, 'text-dark': !isScrolled }"
         >My Portfolio</b-navbar-brand
       >
@@ -113,7 +113,7 @@
                   Download CV <b-icon icon="cloud-arrow-down"></b-icon>
                 </b-button>
                 <b-button
-                  @click="$router.push('/cricket-scoring')"
+                  to = "/cricket-scoring"
                   variant="dark"
                   v-b-tooltip.hover
                   title="More Information About Me."
@@ -511,12 +511,19 @@
         </div>
       </footer>
     </div>
+
+    <BottomNavbar />
   </div>
 </template>
 
 <script>
+import BottomNavbar from './BottomNavbar.vue';
+
 export default {
   name: "LandingPage",
+  components: {
+    BottomNavbar,
+  },
   data() {
     return {
       isScrolled: false,
