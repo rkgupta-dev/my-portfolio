@@ -218,46 +218,6 @@
       </b-container>
     </div>
 
-    <!-- Projects Section -->
-    <div id="projects" class="mt-5">
-      <b-container>
-        <!-- My Story -->
-        <div>
-          <b-container fluid class="p-4">
-            <h1 class="text-center mb-4">My Story</h1>
-            <b-row>
-              <b-col md="12">
-                <b-card class="p-3">
-                  <p>
-                    My journey as a front-end developer started back in 2018,
-                    working as a freelancer for clients all over the world.
-                  </p>
-                  <p>
-                    After being on my own for a while, I decided to enter the
-                    corporate world, and I started working as a software
-                    developer at Ontrack Technology Pvt. Ltd.
-                  </p>
-                  <p>
-                    After some exciting months of work, I transitioned to
-                    Stripe, returning to what I love: front-end development.
-                  </p>
-                  <p>
-                    My success quickly compounded, and I started receiving job
-                    offers from the biggest names in the industry.
-                  </p>
-                  <p>
-                    All these opportunities led me to travel the world.
-                    Eventually, however, I decided to settle down for a calmer
-                    routine, and I'm now working at Apple. And you know what? I
-                    love what I do! 💜
-                  </p>
-                </b-card>
-              </b-col>
-            </b-row>
-          </b-container>
-        </div>
-      </b-container>
-    </div>
     <div id="blog" class="mt-5">
       <b-container>
         <!-- My Story -->

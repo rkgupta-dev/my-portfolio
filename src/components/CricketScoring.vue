@@ -1,309 +1,116 @@
 <template>
-<div>
-  <b-navbar
-      toggleable="lg"
-      :class="{
-        'bg-info': isScrolled,
-        'bg-light': !isScrolled,
-      }"
-      class="py-1 sticky-top shadow-sm"
-      @scroll="handleScroll"
-    >
-      <b-navbar-brand
-        href="/"
-        :class="{ 'text-light': isScrolled, 'text-dark': !isScrolled }"
-        >My Portfolio</b-navbar-brand
-      >
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav class="ml-auto">
-          <b-nav-item href="/" exact>Home</b-nav-item>
-          <b-nav-item href="#about">About</b-nav-item>
-          <b-nav-item href="#projects">Projects</b-nav-item>
-          <b-nav-item href="#blog">Blog</b-nav-item>
-          <b-nav-item href="#contact">Contact</b-nav-item>
-        </b-navbar-nav>
-      </b-collapse>
-    </b-navbar>
-  <b-container>
-    <div id="cricket-scoring">
-      <!-- Navigation Bar -->
-      <b-navbar toggleable="lg" type="dark" variant="dark">
-        <b-navbar-brand href="#">Cricket Scoring</b-navbar-brand>
-        <b-navbar-nav class="ml-auto">
-          <b-nav-item href="#">Home</b-nav-item>
-          <b-nav-item href="#">Scoreboard</b-nav-item>
-          <b-nav-item href="#">Teams</b-nav-item>
-          <b-nav-item href="#">Settings</b-nav-item>
-        </b-navbar-nav>
-      </b-navbar>
+  <div>
+    <b-container>
+      <b-row class="mb-4 mt-4">
+        <b-col>
+          <h1 class="text-center">About Me</h1>
+        </b-col>
+      </b-row>
 
-      <!-- Name Entry Section -->
-      <b-container class="mt-4">
-        <b-row v-if="!namesEntered">
-          <b-col>
-            <b-form @submit.prevent="startMatch">
-              <b-form-group label="Batsman 1 Name">
-                <b-form-input v-model="batsmen[0].name" required></b-form-input>
-              </b-form-group>
-              <b-form-group label="Batsman 2 Name">
-                <b-form-input v-model="batsmen[1].name" required></b-form-input>
-              </b-form-group>
-              <b-form-group label="Bowler Name">
-                <b-form-input v-model="bowler.name" required></b-form-input>
-              </b-form-group>
-              <b-button type="submit" variant="primary">Start Match</b-button>
-            </b-form>
-          </b-col>
-        </b-row>
-      </b-container>
+      <b-row>
+        <!-- Story Section -->
+        <b-col md="12">
+          <b-card>
+            <h3
+              class="h5 font-weight-semibold border-left pl-2 border-danger mb-3"
+            >
+              My Story
+            </h3>
+            <p>
+              My journey as a front-end developer started back in 2018, working
+              as a freelancer for clients all over the world.
+            </p>
+            <p>
+              After being on my own for a while, I decided to enter the
+              corporate world, and I started working as a software developer at
+              Ontrack Technology Pvt. Ltd.
+            </p>
+            <p>
+              After some exciting months of work, I transitioned to Stripe,
+              returning to what I love: front-end development.
+            </p>
+            <p>
+              My success quickly compounded, and I started receiving job offers
+              from the biggest names in the industry.
+            </p>
+            <p>
+              All these opportunities led me to travel the world. Eventually,
+              however, I decided to settle down for a calmer routine, and I'm
+              now working at Apple. And you know what? I love what I do! 💜
+            </p>
+          </b-card>
+        </b-col>
 
-      <!-- New Bowler Entry -->
-      <b-container class="mt-4" v-if="overCompleted && namesEntered">
-        <b-row>
-          <b-col>
-            <b-form @submit.prevent="addNewBowler">
-              <b-form-group label="New Bowler Name">
-                <b-form-input v-model="bowler.name" required></b-form-input>
-              </b-form-group>
-              <b-button type="submit" variant="primary">Add Bowler</b-button>
-            </b-form>
-          </b-col>
-        </b-row>
-      </b-container>
-
-      <!-- New Batsman Entry -->
-      <b-container class="mt-4" v-if="newBatsmanRequired && namesEntered">
-        <b-row>
-          <b-col>
-            <b-form @submit.prevent="addNewBatsman">
-              <b-form-group label="New Batsman Name">
-                <b-form-input v-model="batsmen[currentBatsmanIndex].name" required></b-form-input>
-              </b-form-group>
-              <b-button type="submit" variant="primary">Add Batsman</b-button>
-            </b-form>
-          </b-col>
-        </b-row>
-      </b-container>
-
-      <!-- Scoring Section -->
-      <b-container v-if="namesEntered && !overCompleted && !newBatsmanRequired" class="mt-4">
-        <b-row>
-          <b-col>
-            <h3>Current Score: {{ runs }}/{{ wickets }}</h3>
-            <h5>Overs: {{ overs }}.{{ balls }}</h5>
-          </b-col>
-        </b-row>
-
-        <!-- Batsmen and Bowler Info -->
-        <b-row class="mt-4">
-          <b-col md="6">
-            <h4>Batsmen</h4>
+        <!-- Qualifications Section -->
+        <b-col md="6">
+          <b-card title="My Qualifications" class="mb-4">
             <ul>
-              <li v-for="(batsman, index) in batsmen" :key="index">
-                {{ batsman.name }}: {{ batsman.runs }} ({{ batsman.balls }} balls)
-              </li>
+              <li>Master's in Computer Science</li>
+              <li>Bachelor's in Information Technology</li>
+              <li>Certified in Full-Stack Web Development</li>
             </ul>
-            <h5>Dismissed Batsmen</h5>
-            <ul>
-              <li v-for="(batsman, index) in dismissedBatsmen" :key="index">
-                {{ batsman.name }}: {{ batsman.runs }} runs ({{ batsman.balls }} balls)
-              </li>
-            </ul>
-          </b-col>
-          <b-col md="6">
-            <h4>Bowler</h4>
-            <p>{{ bowler.name }}: {{ bowler.overs }} overs, {{ bowler.runsConceded }} runs, {{ bowler.wickets }} wicket(s)</p>
-            <h5>Dismissed Bowlers</h5>
-            <ul>
-              <li v-for="(bowler, index) in dismissedBowlers" :key="index">
-                {{ bowler.name }}: {{ bowler.overs }} overs, {{ bowler.runsConceded }} runs, {{ bowler.wickets }} wicket(s)
-              </li>
-            </ul>
-          </b-col>
-        </b-row>
+          </b-card>
+        </b-col>
+      </b-row>
 
-        <!-- Scoring Buttons -->
-        <b-row class="mt-4">
-          <b-col>
-            <b-button variant="success" @click="addRun(1)">1 Run</b-button>
-            <b-button variant="success" @click="addRun(2)">2 Runs</b-button>
-            <b-button variant="success" @click="addRun(3)">3 Runs</b-button>
-            <b-button variant="success" @click="addRun(4)">4 Runs</b-button>
-            <b-button variant="success" @click="addRun(6)">6 Runs</b-button>
-            <b-button variant="danger" @click="addWicket()">Wicket</b-button>
-            <b-button variant="primary" @click="addBall()">Next Ball</b-button>
-          </b-col>
-        </b-row>
-
-        <!-- Summary Section -->
-        <b-row class="mt-5">
-          <b-col>
-            <h4>Match Summary</h4>
+      <b-row>
+        <!-- Skills Section -->
+        <b-col md="6">
+          <b-card title="My Skills" class="mb-4">
             <b-list-group>
-              <b-list-group-item v-for="(entry, index) in summary" :key="index">
-                Over {{ entry.over }}: {{ entry.runs }} runs, {{ entry.wickets }} wicket(s)
-              </b-list-group-item>
+              <b-list-group-item
+                >Frontend Development: HTML, CSS, JavaScript, Vue.js,
+                React</b-list-group-item
+              >
+              <b-list-group-item
+                >Backend Development: Node.js, Express,
+                Python</b-list-group-item
+              >
+              <b-list-group-item
+                >Database Management: MySQL, MongoDB</b-list-group-item
+              >
+              <b-list-group-item
+                >Version Control: Git, GitHub</b-list-group-item
+              >
             </b-list-group>
-          </b-col>
-        </b-row>
-      </b-container>
+          </b-card>
+        </b-col>
 
-      <!-- Footer -->
-      <b-footer class="text-center mt-4">
-        &copy; 2024 Cricket Scoring by Rohit Kumar Gupta
-      </b-footer>
+        <!-- Contact Section -->
+        <b-col md="6">
+          <b-card title="Contact Me" class="mb-4">
+            <p>
+              If you’d like to collaborate or discuss opportunities, feel free
+              to reach out to me!
+            </p>
+            <b-button href="mailto:example@email.com" variant="primary"
+              >Email Me</b-button
+            >
+          </b-card>
+        </b-col>
+      </b-row>
 
-      <!-- Button to Download Score Document -->
-      <b-container class="text-center mt-4" v-if="overs === 10">
-        <b-button variant="info" @click="downloadScoreDocument">Download Score Summary</b-button>
-      </b-container>
-    </div>
-  </b-container>
-</div>
+      <b-row>
+        <!-- Footer Section -->
+        <b-col>
+          <b-card class="text-center">
+            <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+          </b-card>
+        </b-col>
+      </b-row>
+    </b-container>
+  </div>
 </template>
 
 <script>
 export default {
   name: "CricketScoring",
-  data() {
-    return {
-      runs: 0,
-      wickets: 0,
-      overs: 0,
-      balls: 0,
-      summary: [],
-      batsmen: [
-        { name: "", runs: 0, balls: 0 },
-        { name: "", runs: 0, balls: 0 }
-      ],
-      dismissedBatsmen: [],
-      dismissedBowlers: [],
-      bowler: {
-        name: "",
-        overs: 0,
-        runsConceded: 0,
-        wickets: 0
-      },
-      currentBatsmanIndex: 0,
-      namesEntered: false,
-      overCompleted: false,
-      newBatsmanRequired: false
-    };
-  },
-  methods: {
-    startMatch() {
-      this.namesEntered = true;
-    },
-    addRun(run) {
-      this.runs += run;
-      this.batsmen[this.currentBatsmanIndex].runs += run;
-      this.batsmen[this.currentBatsmanIndex].balls += 1;
-      this.bowler.runsConceded += run;
-
-      if (run % 2 !== 0) {
-        this.rotateStrike();
-      }
-
-      this.addBall();
-    },
-    addWicket() {
-      this.wickets += 1;
-      this.bowler.wickets += 1;
-
-      // Save the dismissed batsman's data
-      this.dismissedBatsmen.push({
-        ...this.batsmen[this.currentBatsmanIndex]
-      });
-
-      // Reset the current batsman data
-      this.batsmen[this.currentBatsmanIndex] = {
-        name: "",
-        runs: 0,
-        balls: 0
-      };
-
-      this.newBatsmanRequired = true;
-      this.addBall();
-    },
-    addBall() {
-      this.balls += 1;
-      if (this.balls === 6) {
-        this.overs += 1;
-        this.balls = 0;
-
-        // Save the dismissed bowler's data
-        this.dismissedBowlers.push({
-          ...this.bowler
-        });
-
-        // Reset the bowler's data for the new over
-        this.bowler = {
-          name: this.bowler.name, // Keep the same bowler's name
-          overs: 0,
-          runsConceded: 0,
-          wickets: 0
-        };
-
-        // Save the over summary
-        this.summary.push({
-          over: this.overs,
-          runs: this.runs,
-          wickets: this.wickets
-        });
-
-        // Change strike after an over
-        this.rotateStrike();
-
-        this.overCompleted = true;
-
-        if (this.overs === 10) {
-          this.generateScoreSummary();
-        }
-      }
-    },
-    rotateStrike() {
-      this.currentBatsmanIndex = this.currentBatsmanIndex === 0 ? 1 : 0;
-    },
-    addNewBowler() {
-      this.overCompleted = false;
-      this.bowler.overs = 0;
-    },
-    addNewBatsman() {
-      this.newBatsmanRequired = false;
-    },
-    generateScoreSummary() {
-      let summary = `Cricket Score Summary after ${this.overs} Overs\n`;
-      summary += `Runs: ${this.runs}, Wickets: ${this.wickets}\n\n`;
-      summary += `Batsmen:\n`;
-      this.batsmen.forEach((batsman, index) => {
-        summary += `Batsman ${index + 1}: ${batsman.name} - ${batsman.runs} runs (${batsman.balls} balls)\n`;
-      });
-      summary += `\nBowlers:\n`;
-      summary += `${this.bowler.name} - ${this.bowler.overs} overs, ${this.bowler.runsConceded} runs, ${this.bowler.wickets} wickets\n`;
-
-      this.downloadFile(summary, "score_summary.txt");
-    },
-    downloadFile(content, fileName) {
-      const blob = new Blob([content], { type: "text/plain" });
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = fileName;
-      link.click();
-    }
-  }
 };
 </script>
 
 <style scoped>
-#cricket-scoring {
-  max-width: 800px;
-  margin: auto;
-}
-
-
-
-h3, h4, h5 {
-  margin-bottom: 15px;
+h1 {
+  font-family: "Arial", sans-serif;
+  color: #007bff;
 }
 </style>
