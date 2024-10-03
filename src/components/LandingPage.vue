@@ -109,11 +109,17 @@
                 maintainability.
               </p>
               <div class="text-center my-4">
-                <b-button to="/projects" variant="primary" class="mr-2">
+                <b-button
+                  variant="primary"
+                  class="mr-2"
+                  href=""
+                  v-b-tooltip.hover
+                  title="Download My Resume"
+                >
                   Download CV <b-icon icon="cloud-arrow-down"></b-icon>
                 </b-button>
                 <b-button
-                  to = "/cricket-scoring"
+                  to="/cricket-scoring"
                   variant="dark"
                   v-b-tooltip.hover
                   title="More Information About Me."
@@ -477,7 +483,7 @@
 </template>
 
 <script>
-import BottomNavbar from './BottomNavbar.vue';
+import BottomNavbar from "./BottomNavbar.vue";
 
 export default {
   name: "LandingPage",
