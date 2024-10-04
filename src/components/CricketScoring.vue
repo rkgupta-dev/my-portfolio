@@ -1,116 +1,106 @@
 <template>
   <div>
-    <b-container>
-      <b-row class="mb-4 mt-4">
+    <!-- Header -->
+    <b-navbar toggleable="lg" type="light" variant="info">
+      <b-navbar-brand href="#">Cricket Dashboard</b-navbar-brand>
+    </b-navbar>
+
+    <!-- Match Info -->
+    <b-card class="my-4" header="Match Details" header-bg-variant="info" header-text-variant="white">
+      <b-row>
         <b-col>
-          <h1 class="text-center">About Me</h1>
+          <b-card-text>
+            <strong>Team A: {{ teamA }}</strong> | <strong>Team B: {{ teamB }}</strong>
+          </b-card-text>
+          <b-card-text>Overs: {{ overs }} | Wickets: {{ wickets }} | Runs: {{ runs }}</b-card-text>
         </b-col>
       </b-row>
+    </b-card>
 
-      <b-row>
-        <!-- Story Section -->
-        <b-col md="12">
-          <b-card>
-            <h3
-              class="h5 font-weight-semibold border-left pl-2 border-danger mb-3"
-            >
-              My Story
-            </h3>
-            <p>
-              My journey as a front-end developer started back in 2018, working
-              as a freelancer for clients all over the world.
-            </p>
-            <p>
-              After being on my own for a while, I decided to enter the
-              corporate world, and I started working as a software developer at
-              Ontrack Technology Pvt. Ltd.
-            </p>
-            <p>
-              After some exciting months of work, I transitioned to Stripe,
-              returning to what I love: front-end development.
-            </p>
-            <p>
-              My success quickly compounded, and I started receiving job offers
-              from the biggest names in the industry.
-            </p>
-            <p>
-              All these opportunities led me to travel the world. Eventually,
-              however, I decided to settle down for a calmer routine, and I'm
-              now working at Apple. And you know what? I love what I do! 💜
-            </p>
-          </b-card>
-        </b-col>
+    <!-- Player Info -->
+    <b-card class="my-4">
+      <b-card-header>Player Details</b-card-header>
+      <b-table striped hover :items="players" :fields="fields">
+        <template #cell(actions)="row">
+          <b-button size="sm" @click="addRun(row.index)" variant="success">Add Run</b-button>
+          <b-button size="sm" @click="addWicket(row.index)" variant="danger">Out</b-button>
+          <b-button size="sm" @click="removePlayer(row.index)" variant="warning">Remove</b-button>
+        </template>
+      </b-table>
+      
+      <b-input-group class="mt-3">
+        <b-form-input v-model="newPlayerName" placeholder="Add Player Name"></b-form-input>
+        <b-input-group-append>
+          <b-button @click="addPlayer" variant="primary">Add Player</b-button>
+        </b-input-group-append>
+      </b-input-group>
+    </b-card>
 
-        <!-- Qualifications Section -->
-        <b-col md="6">
-          <b-card title="My Qualifications" class="mb-4">
-            <ul>
-              <li>Master's in Computer Science</li>
-              <li>Bachelor's in Information Technology</li>
-              <li>Certified in Full-Stack Web Development</li>
-            </ul>
-          </b-card>
-        </b-col>
-      </b-row>
-
-      <b-row>
-        <!-- Skills Section -->
-        <b-col md="6">
-          <b-card title="My Skills" class="mb-4">
-            <b-list-group>
-              <b-list-group-item
-                >Frontend Development: HTML, CSS, JavaScript, Vue.js,
-                React</b-list-group-item
-              >
-              <b-list-group-item
-                >Backend Development: Node.js, Express,
-                Python</b-list-group-item
-              >
-              <b-list-group-item
-                >Database Management: MySQL, MongoDB</b-list-group-item
-              >
-              <b-list-group-item
-                >Version Control: Git, GitHub</b-list-group-item
-              >
-            </b-list-group>
-          </b-card>
-        </b-col>
-
-        <!-- Contact Section -->
-        <b-col md="6">
-          <b-card title="Contact Me" class="mb-4">
-            <p>
-              If you’d like to collaborate or discuss opportunities, feel free
-              to reach out to me!
-            </p>
-            <b-button href="mailto:example@email.com" variant="primary"
-              >Email Me</b-button
-            >
-          </b-card>
-        </b-col>
-      </b-row>
-
-      <b-row>
-        <!-- Footer Section -->
-        <b-col>
-          <b-card class="text-center">
-            <p>&copy; 2024 My Portfolio. All rights reserved.</p>
-          </b-card>
-        </b-col>
-      </b-row>
-    </b-container>
+    <!-- Score Controls -->
+    <b-row class="my-4">
+      <b-col>
+        <b-button variant="success" @click="incrementRuns">Add 1 Run</b-button>
+        <b-button variant="danger" @click="incrementWicket">Add 1 Wicket</b-button>
+        <b-button variant="warning" @click="incrementOvers">Next Over</b-button>
+        <b-button variant="secondary" @click="resetMatch">Reset Match</b-button>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
 <script>
 export default {
-  name: "CricketScoring",
+  data() {
+    return {
+      teamA: 'Team A',
+      teamB: 'Team B',
+      runs: 100,
+      wickets: 3,
+      overs: 12,
+      newPlayerName: '',
+      players: [
+        { name: 'Player 1', runs: 50, status: 'Not Out' },
+        { name: 'Player 2', runs: 30, status: 'Not Out' },
+        { name: 'Player 3', runs: 10, status: 'Out' }
+      ],
+      fields: ['name', 'runs', 'status', { key: 'actions', label: 'Actions' }]
+    };
+  },
+  methods: {
+    incrementRuns() {
+      this.runs++;
+    },
+    incrementWicket() {
+      this.wickets++;
+    },
+    incrementOvers() {
+      this.overs++;
+    },
+    resetMatch() {
+      this.runs = 0;
+      this.wickets = 0;
+      this.overs = 0;
+      this.players = [];
+    },
+    addRun(index) {
+      this.players[index].runs++;
+    },
+    addWicket(index) {
+      this.players[index].status = 'Out';
+    },
+    addPlayer() {
+      if (this.newPlayerName) {
+        this.players.push({ name: this.newPlayerName, runs: 0, status: 'Not Out' });
+        this.newPlayerName = '';
+      }
+    },
+    removePlayer(index) {
+      this.players.splice(index, 1);
+    }
+  }
 };
 </script>
 
-<style scoped>
-h1 {
-  font-family: "Arial", sans-serif;
-  color: #007bff;
-}
+<style>
+/* Add any custom styling here */
 </style>
