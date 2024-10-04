@@ -1,158 +1,116 @@
 <template>
-  <b-container class="bg-light" fluid>
-    <b-row>
-      <b-col md="12" class="mt-5">
-        <h1 class="text-center">About Me</h1>
-        <p class="lead text-center">
-          I’m a creative developer passionate about using technology to solve
-          real-world problems and improve user experiences in the digital
-          landscape.
-        </p>
-      </b-col>
-    </b-row>
+  <div>
     <b-container>
-      <hr />
-      <b-row class="my-4">
+      <b-row class="mb-4 mt-4">
         <b-col>
-          <b-img
-            src="https://static-00.iconduck.com/assets.00/web-developer-illustration-2048x1490-saofs07x.png"
-            alt="Web Developer Illustration"
-            class="mb-4"
-            fluid
-          >
-          </b-img>
+          <h1 class="text-center">About Me</h1>
         </b-col>
+      </b-row>
 
-        <b-col md="6" class="my-5">
-          <h2 class="text-center">Frontend Developer</h2>
-          <p class="text-center font-size">
-            I am a frontend developer with expertise in creating intuitive and
-            responsive user interfaces. I specialize in leveraging modern
-            frameworks such as Bootstrap Vue, Vue.js, and more to craft seamless
-            web experiences. My focus is on building efficient, accessible, and
-            visually engaging solutions that meet user needs while ensuring
-            top-notch performance and maintainability.
-          </p>
-          <div class="text-center my-4">
-            <b-button to="/projects" variant="primary" class="mr-2">
-              Download CV <b-icon icon="cloud-arrow-down"></b-icon>
-            </b-button>
-            <b-button to="/projects" variant="dark">
-              More Info <b-icon icon="info-circle"></b-icon>
-            </b-button>
-          </div>
-        </b-col>
-        <b-col md="12" class="my-2">
-          <h3 class="text-center">My Skills</h3>
-          <div
-            class="border bg-success mt-2 mx-auto"
-            style="width: 10%; height: 3px"
-          ></div>
-          <p class="lead text-center">
-            Creative web solutions utilizing design principles and coding expertise.
-          </p>
-        </b-col>
-
-        <!-- Web Design Skills -->
-        <b-col md="4" class="my-4">
-          <b-card class="text-center skill-card">
-            <h4 class="text-primary">Web Design</h4>
-            <hr />
-            <ul class="list-unstyled">
-              <li class="font-weight-bold display-5">UI/UX Design</li>
-              <li class="font-weight-bold display-5">Responsive Design</li>
-              <li class="font-weight-bold display-5">Wireframing</li>
-              <li class="font-weight-bold display-5">User Research</li>
-            </ul>
+      <b-row>
+        <!-- Story Section -->
+        <b-col md="12">
+          <b-card>
+            <h3
+              class="h5 font-weight-semibold border-left pl-2 border-danger mb-3"
+            >
+              My Story
+            </h3>
+            <p>
+              My journey as a front-end developer started back in 2018, working
+              as a freelancer for clients all over the world.
+            </p>
+            <p>
+              After being on my own for a while, I decided to enter the
+              corporate world, and I started working as a software developer at
+              Ontrack Technology Pvt. Ltd.
+            </p>
+            <p>
+              After some exciting months of work, I transitioned to Stripe,
+              returning to what I love: front-end development.
+            </p>
+            <p>
+              My success quickly compounded, and I started receiving job offers
+              from the biggest names in the industry.
+            </p>
+            <p>
+              All these opportunities led me to travel the world. Eventually,
+              however, I decided to settle down for a calmer routine, and I'm
+              now working at Apple. And you know what? I love what I do! 💜
+            </p>
           </b-card>
         </b-col>
 
-        <!-- Frontend Skills -->
-        <b-col md="4" class="my-4">
-          <b-card class="text-center skill-card">
-            <h4 class="text-primary">Frontend</h4>
-            <hr />
-            <ul class="list-unstyled">
-              <li class="font-weight-bold display-5">JavaScript</li>
-              <li class="font-weight-bold display-6">ReactJS</li>
-              <li class="font-weight-bold display-6">NextJS</li>
-              <li class="font-weight-bold display-6">CSS3</li>
-            </ul>
-          </b-card>
-        </b-col>
-
-        <!-- Backend Skills -->
-        <b-col md="4" class="my-4">
-          <b-card class="text-center skill-card">
-            <h4 class="text-primary">Backend</h4>
-            <hr />
-            <ul class="list-unstyled">
-              <li class="font-weight-bold display-5">NodeJs</li>
-              <li class="font-weight-bold display-5">MongoDB</li>
-              <li class="font-weight-bold display-5">ExpressJS</li>
-              <li class="font-weight-bold display-5">Vercel</li>
+        <!-- Qualifications Section -->
+        <b-col md="6">
+          <b-card title="My Qualifications" class="mb-4">
+            <ul>
+              <li>Master's in Computer Science</li>
+              <li>Bachelor's in Information Technology</li>
+              <li>Certified in Full-Stack Web Development</li>
             </ul>
           </b-card>
         </b-col>
       </b-row>
+
+      <b-row>
+        <!-- Skills Section -->
+        <b-col md="6">
+          <b-card title="My Skills" class="mb-4">
+            <b-list-group>
+              <b-list-group-item
+                >Frontend Development: HTML, CSS, JavaScript, Vue.js,
+                React</b-list-group-item
+              >
+              <b-list-group-item
+                >Backend Development: Node.js, Express,
+                Python</b-list-group-item
+              >
+              <b-list-group-item
+                >Database Management: MySQL, MongoDB</b-list-group-item
+              >
+              <b-list-group-item
+                >Version Control: Git, GitHub</b-list-group-item
+              >
+            </b-list-group>
+          </b-card>
+        </b-col>
+
+        <!-- Contact Section -->
+        <b-col md="6">
+          <b-card title="Contact Me" class="mb-4">
+            <p>
+              If you’d like to collaborate or discuss opportunities, feel free
+              to reach out to me!
+            </p>
+            <b-button href="mailto:example@email.com" variant="primary"
+              >Email Me</b-button
+            >
+          </b-card>
+        </b-col>
+      </b-row>
+
+      <b-row>
+        <!-- Footer Section -->
+        <b-col>
+          <b-card class="text-center">
+            <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+          </b-card>
+        </b-col>
+      </b-row>
     </b-container>
-  </b-container>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "AboutPage",
-  data() {
-    return {
-      teamMembers: [
-        {
-          name: "About Me",
-          image: "https://via.placeholder.com/150",
-          description:
-            "A passionate developer with a love for coding and innovation.",
-        },
-      ],
-    };
-  },
+  name: "CricketScoring",
 };
 </script>
 
 <style scoped>
 h1 {
-  margin-bottom: 20px;
-}
-.font-size {
-  font-size: 1.2rem; /* You can adjust the size as needed */
-}
-
-/* Hover effect for cards */
-.skill-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  background-image: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(130, 205, 221, 1) 0%,
-    rgba(255, 247, 153, 1) 90%
-  );
-}
-
-.skill-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.fade-in {
-  animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 3;
-    transform: translateY(0);
-  }
+  font-family: "Arial", sans-serif;
+  color: #007bff;
 }
 </style>

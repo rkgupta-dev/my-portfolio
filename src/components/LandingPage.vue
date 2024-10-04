@@ -119,7 +119,7 @@
                   Download CV <b-icon icon="cloud-arrow-down"></b-icon>
                 </b-button>
                 <b-button
-                  to="/cricket-scoring"
+                  to="/more-information"
                   variant="dark"
                   v-b-tooltip.hover
                   title="More Information About Me."

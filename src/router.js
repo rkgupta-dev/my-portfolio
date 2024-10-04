@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import LandingPage from './components/LandingPage.vue';
-import CricketScoring from './components/CricketScoring.vue'; // Import the component
+import AboutPage from './components/AboutPage.vue';
 
 Vue.use(Router);
 
@@ -14,9 +14,9 @@ export default new Router({
       component: LandingPage,
     },
     {
-      path: '/cricket-scoring',
-      name: 'cricket-scoring',
-      component: CricketScoring,
+      path: '/more-information',
+      name: 'about-me',
+      component: AboutPage,
     },
   ],
 });
