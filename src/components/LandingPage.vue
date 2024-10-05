@@ -234,8 +234,9 @@
           <b-col md="12" class="mt-5">
             <h1 class="text-center">MY LATEST BLOG</h1>
             <p class="text-center text-muted mb-4">
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have suffered alteration in some form.
+              "A journey through technology, design, and creativity, exploring
+              innovative ideas that inspire and empower others to make a
+              difference."
             </p>
           </b-col>
         </b-row>
@@ -527,7 +528,7 @@ export default {
 
       blogPosts: [
         {
-          date: "05 Oct 2024",
+          date: "05 May 2024",
           title: "5 trends that will change the world.",
           excerpt: "Discover the technologies shaping our future.",
           img: require("@/assets/blog1.png"),
@@ -542,11 +543,11 @@ export default {
           link: "/more-information",
         },
         {
-          date: "15 Jul 2020",
-          title: "Top five ways for learning web development.",
+          date: "09 Oct 2024",
+          title: "Top 5 ways for learning web development.",
           excerpt:
-            "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard.",
-          imageUrl: "",
+            "Unlocking Your Path to Web Development Mastery.",
+            img: require("@/assets/blog3.png"),
           link: "/blog-03",
         },
       ],

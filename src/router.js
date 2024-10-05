@@ -4,6 +4,7 @@ import LandingPage from './components/LandingPage.vue';
 import AboutPage from './components/AboutPage.vue';
 import CricketScoring from './components/CricketScoring.vue';
 import BlogDetails01 from './BlogPages/BlogDetails01.vue';
+import BlogDetails03 from './BlogPages/BlogDetails03.vue';
 
 Vue.use(Router);
 
@@ -29,6 +30,11 @@ export default new Router({
       path: '/blog-01',
       name: 'blog',
       component: BlogDetails01,
+    },
+    {
+      path: '/blog-03',
+      name: 'blog',
+      component: BlogDetails03,
     },
   ],
 });
