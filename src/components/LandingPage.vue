@@ -536,7 +536,7 @@ export default {
         },
         {
           date: "22 Aug 2020",
-          title: "We have announced our new product.",
+          title: "Modern JavaScript Frameworks.",
           excerpt:
             "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard.",
           imageUrl: "",
