@@ -244,12 +244,12 @@
           <b-col
             v-for="(post, index) in blogPosts"
             :key="index"
-            md="3"
+            md="4"
             class="mb-4"
           >
             <b-card>
               <b-img
-                :src="post.imageUrl"
+                :src="post.img"
                 :alt="post.title"
                 class="card-img-top"
                 height="200"
@@ -260,6 +260,9 @@
               </b-card-header>
               <b-card-body>
                 <p class="text-muted">{{ post.excerpt }}</p>
+                <router-link :to="post.link" variant="primary" class="mt-2">
+                  Read More
+                </router-link>
               </b-card-body>
             </b-card>
           </b-col>
@@ -524,11 +527,11 @@ export default {
 
       blogPosts: [
         {
-          date: "22 Aug 2020",
-          title: "We have announced our new product.",
-          excerpt:
-            "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard.",
-          imageUrl: "",
+          date: "05 Oct 2024",
+          title: "5 trends that will change the world.",
+          excerpt: "Discover the technologies shaping our future.",
+          img: require("@/assets/blog1.png"),
+          link: "/blog-01",
         },
         {
           date: "22 Aug 2020",
@@ -536,6 +539,7 @@ export default {
           excerpt:
             "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard.",
           imageUrl: "",
+          link: "/more-information",
         },
         {
           date: "15 Jul 2020",
@@ -543,15 +547,8 @@ export default {
           excerpt:
             "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard.",
           imageUrl: "",
+          link: "/blog-03",
         },
-        {
-          date: "15 Jul 2020",
-          title: "Top five ways for learning web development.",
-          excerpt:
-            "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard.",
-          imageUrl: "",
-        },
-        
       ],
     };
   },
