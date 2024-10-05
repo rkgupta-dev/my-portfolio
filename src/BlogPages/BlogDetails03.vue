@@ -3,10 +3,10 @@
     <b-card-header>
       <h2 class="text-center">Top 5 Ways to Learn Web Development</h2>
     </b-card-header>
-    <b-container>
+    <b-container class="my-4">
       <b-row>
         <b-col cols="12">
-          <p class="text-muted text-center my-4">
+          <p class="text-muted text-center">
             Web development is a dynamic and rewarding field, with endless
             opportunities for those willing to learn. Whether you're a complete
             beginner or looking to enhance your skills, there are various
@@ -50,14 +50,22 @@
         </b-card>
       </div>
 
-      <p>
-        Learning web development is an exciting journey filled with
-        opportunities for creativity and problem-solving. By leveraging online
-        courses, interactive platforms, real-world projects, community support,
-        and staying updated, you can develop the skills needed to thrive in this
-        ever-evolving field. Start your journey today and unlock the endless
-        possibilities of web development!
-      </p>
+      <!-- Conclusion Section -->
+      <b-row class="mt-5">
+        <b-col>
+          <b-card class="bg-light">
+            <h3>Conclusion</h3>
+            <p>
+              Learning web development is an exciting journey filled with
+              opportunities for creativity and problem-solving. By leveraging
+              online courses, interactive platforms, real-world projects,
+              community support, and staying updated, you can develop the skills
+              needed to thrive in this ever-evolving field. Start your journey
+              today and unlock the endless possibilities of web development!
+            </p>
+          </b-card>
+        </b-col>
+      </b-row>
     </b-container>
   </div>
 </template>

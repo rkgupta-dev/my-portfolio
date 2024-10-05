@@ -3,7 +3,7 @@
     <b-card-header>
       <h2 class="text-center">5 Trends That Will Change the World</h2>
     </b-card-header>
-    <b-container class="mt-5">
+    <b-container class="my-4">
       <b-row>
         <b-col cols="12">
           <p class="text-muted text-center">
@@ -85,14 +85,22 @@
         </b-col>
       </b-row>
 
-      <p>
-        As we navigate through an era of unprecedented change, the five trends
-        discussed—artificial intelligence, renewable energy, remote work, the
-        rise of the gig economy, and advancements in biotechnology—are poised to
-        reshape our world in profound ways. Each trend brings with it both
-        challenges and opportunities, urging us to adapt and innovate as we move
-        forward.
-      </p>
+      <!-- Conclusion Section -->
+      <b-row class="mt-5">
+        <b-col>
+          <b-card class="bg-light">
+            <h3>Conclusion</h3>
+            <p>
+              As we navigate through an era of unprecedented change, the five
+              trends discussed—artificial intelligence, renewable energy, remote
+              work, the rise of the gig economy, and advancements in
+              biotechnology—are poised to reshape our world in profound ways.
+              Each trend brings with it both challenges and opportunities,
+              urging us to adapt and innovate as we move forward.
+            </p>
+          </b-card>
+        </b-col>
+      </b-row>
     </b-container>
   </div>
 </template>

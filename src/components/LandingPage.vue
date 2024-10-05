@@ -507,20 +507,20 @@ export default {
           title: "Portfolio Website",
           description:
             "A personal portfolio website built with Vue.js and BootstrapVue.",
-          img: require("@/assets/dp1.png"),
+            img: require("@/assets/blog2.png"),
           link: "#",
         },
         {
           title: "Travel Blog",
           description:
             "A travel blog showcasing beautiful destinations around the world.",
-          img: require("@/assets/dp1.png"),
+          img: require("@/assets/blog1.png"),
           link: "/travel-blog",
         },
         {
           title: "Cricket Scoring Dashboard",
           description: "To create a cricket scoring system using BootstrapVue.",
-          img: require("@/assets/dp1.png"),
+          img: require("@/assets/blog3.png"),
           link: "/cricket-scoring",
         },
         // Add more projects here
@@ -535,12 +535,12 @@ export default {
           link: "/blog-01",
         },
         {
-          date: "22 Aug 2020",
+          date: "07 July 2024",
           title: "Modern JavaScript Frameworks.",
           excerpt:
-            "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard.",
-          imageUrl: "",
-          link: "/more-information",
+            "Choosing the Best JavaScript Framework for Your Project.",
+            img: require("@/assets/blog2.png"),
+          link: "/blog-02",
         },
         {
           date: "09 Oct 2024",
