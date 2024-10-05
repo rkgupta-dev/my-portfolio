@@ -230,38 +230,40 @@
 
     <div id="blog" class="mt-5">
       <b-container>
-        <!-- My Story -->
-        <div class="container my-4">
-          <h1 class="text-center mb-2">MY LATEST BLOG</h1>
-          <p class="text-center text-muted mb-4">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form.
-          </p>
-          <b-row>
-            <b-col
-              v-for="(post, index) in blogPosts"
-              :key="index"
-              md="4"
-              class="mb-4"
-            >
-              <b-card class="containers">
-                <b-img
-                  :src="post.imageUrl"
-                  :alt="post.title"
-                  class="card-img-top"
-                  height="200"
-                />
-                <b-card-header class="project-card">
-                  <div class="text-muted">{{ post.date }}</div>
-                  <h5 class="mb-0">{{ post.title }}</h5>
-                </b-card-header>
-                <b-card-body>
-                  <p class="text-muted">{{ post.excerpt }}</p>
-                </b-card-body>
-              </b-card>
-            </b-col>
-          </b-row>
-        </div>
+        <b-row>
+          <b-col md="12" class="mt-5">
+            <h1 class="text-center">MY LATEST BLOG</h1>
+            <p class="text-center text-muted mb-4">
+              There are many variations of passages of Lorem Ipsum available,
+              but the majority have suffered alteration in some form.
+            </p>
+          </b-col>
+        </b-row>
+
+        <b-row>
+          <b-col
+            v-for="(post, index) in blogPosts"
+            :key="index"
+            md="3"
+            class="mb-4"
+          >
+            <b-card>
+              <b-img
+                :src="post.imageUrl"
+                :alt="post.title"
+                class="card-img-top"
+                height="200"
+              />
+              <b-card-header class="project-card">
+                <div class="text-muted">{{ post.date }}</div>
+                <h5 class="mb-0">{{ post.title }}</h5>
+              </b-card-header>
+              <b-card-body>
+                <p class="text-muted">{{ post.excerpt }}</p>
+              </b-card-body>
+            </b-card>
+          </b-col>
+        </b-row>
       </b-container>
     </div>
 
@@ -412,75 +414,73 @@
           </b-col>
         </b-row>
       </b-container>
-
-      <footer class="bg-dark border-top">
-        <div class="container py-4 py-md-5">
-          <b-row>
-            <!-- About Section -->
-            <b-col md="4" class="mb-4 mb-md-0">
-              <h3 class="h5 font-weight-bold text-info">Rohit Kr. Gupta</h3>
-              <p class="text-light">
-                A passionate web developer crafting beautiful and functional
-                websites.
-              </p>
-            </b-col>
-
-            <!-- Quick Links Section -->
-            <b-col md="4" class="mb-4 mb-md-0">
-              <h3 class="h5 font-weight-bold text-info">Quick Links</h3>
-              <nav class="d-flex flex-row flex-wrap">
-                <b-link href="/" class="text-light mr-3">Home</b-link>
-                <b-link href="#about" class="text-light mr-3">About</b-link>
-                <b-link href="#projects" class="text-light mr-3"
-                  >Projects</b-link
-                >
-                <b-link href="#blog" class="text-light mr-3">Blog</b-link>
-                <b-link href="#contact" class="text-light">Contact</b-link>
-              </nav>
-            </b-col>
-
-            <!-- Contact Info Section -->
-            <b-col md="4">
-              <h3 class="h5 font-weight-bold text-info">Follow Me</h3>
-              <div class="d-flex justify-content-start">
-                <a
-                  href="https://github.com/rkgupta-dev"
-                  class="h4 text-light mr-3 icon-scale"
-                >
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/rohit-kr-gupta-921760208/"
-                  class="h4 text-light mr-3 icon-scale"
-                  ><i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a
-                  href="https://www.instagram.com/rohit_3337_/"
-                  class="h4 text-light mr-3 icon-scale"
-                  ><i class="fa-brands fa-instagram"></i>
-                </a>
-                <a
-                  href="https://www.facebook.com/rohitkrgupta.gupta.3?mibextid=ZbWKwL"
-                  class="h4 text-light mr-3 icon-scale"
-                  ><i class="fa-brands fa-facebook"></i>
-                </a>
-                <a
-                  href="mailto:rohitkrgupta333@gmail.com"
-                  class="h4 text-light mr-3 icon-scale"
-                >
-                  <i class="fa-solid fa-envelope"></i>
-                </a>
-              </div>
-            </b-col>
-          </b-row>
-
-          <!-- Footer Bottom Section -->
-          <div class="mt-4 pt-4 border-top text-center text-light">
-            <p>&copy; {{ currentYear }} Rohit Kr Gupta. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
+
+    <footer class="bg-dark border-top">
+      <div class="container py-4 py-md-5">
+        <b-row>
+          <!-- About Section -->
+          <b-col md="4" class="mb-4 mb-md-0">
+            <h3 class="h5 font-weight-bold text-info">Rohit Kr. Gupta</h3>
+            <p class="text-light">
+              A passionate web developer crafting beautiful and functional
+              websites.
+            </p>
+          </b-col>
+
+          <!-- Quick Links Section -->
+          <b-col md="4" class="mb-4 mb-md-0">
+            <h3 class="h5 font-weight-bold text-info">Quick Links</h3>
+            <nav class="d-flex flex-row flex-wrap">
+              <b-link href="/" class="text-light mr-3">Home</b-link>
+              <b-link href="#about" class="text-light mr-3">About</b-link>
+              <b-link href="#projects" class="text-light mr-3">Projects</b-link>
+              <b-link href="#blog" class="text-light mr-3">Blog</b-link>
+              <b-link href="#contact" class="text-light">Contact</b-link>
+            </nav>
+          </b-col>
+
+          <!-- Contact Info Section -->
+          <b-col md="4">
+            <h3 class="h5 font-weight-bold text-info">Follow Me</h3>
+            <div class="d-flex justify-content-start">
+              <a
+                href="https://github.com/rkgupta-dev"
+                class="h4 text-light mr-3 icon-scale"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rohit-kr-gupta-921760208/"
+                class="h4 text-light mr-3 icon-scale"
+                ><i class="fa-brands fa-linkedin"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/rohit_3337_/"
+                class="h4 text-light mr-3 icon-scale"
+                ><i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/rohitkrgupta.gupta.3?mibextid=ZbWKwL"
+                class="h4 text-light mr-3 icon-scale"
+                ><i class="fa-brands fa-facebook"></i>
+              </a>
+              <a
+                href="mailto:rohitkrgupta333@gmail.com"
+                class="h4 text-light mr-3 icon-scale"
+              >
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
+          </b-col>
+        </b-row>
+
+        <!-- Footer Bottom Section -->
+        <div class="mt-4 pt-4 border-top text-center text-light">
+          <p>&copy; {{ currentYear }} Rohit Kr Gupta. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
 
     <BottomNavbar />
   </div>
@@ -531,6 +531,13 @@ export default {
           imageUrl: "",
         },
         {
+          date: "22 Aug 2020",
+          title: "We have announced our new product.",
+          excerpt:
+            "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard.",
+          imageUrl: "",
+        },
+        {
           date: "15 Jul 2020",
           title: "Top five ways for learning web development.",
           excerpt:
@@ -538,12 +545,13 @@ export default {
           imageUrl: "",
         },
         {
-          date: "05 Jan 2020",
-          title: "We provide highly business solutions.",
+          date: "15 Jul 2020",
+          title: "Top five ways for learning web development.",
           excerpt:
             "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard.",
           imageUrl: "",
         },
+        
       ],
     };
   },
@@ -648,13 +656,13 @@ h1 {
 
 /* main image effect */
 .hover-effect {
-  transform: scale(1.05); 
+  transform: scale(1.05);
   filter: grayscale(0%);
 }
 
 .hover-effect:hover {
   transition: transform 0.6s, filter 0.6s;
-  filter: grayscale(100%); 
+  filter: grayscale(100%);
 }
 
 .containers {
@@ -663,25 +671,5 @@ h1 {
   background: linear-gradient(90deg, #03a9f4, #f441a5);
   border-radius: 0.9em;
   transition: all 0.4s ease;
-}
-
-.containers::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  border-radius: 0.9em;
-  z-index: -10;
-  filter: blur(0);
-  transition: filter 0.4s ease;
-}
-
-.containers:hover::before {
-  background: linear-gradient(90deg, #03a9f4, #f441a5);
-  filter: blur(1.2em);
-}
-
-.containers:active::before {
-  filter: blur(0.2em);
 }
 </style>
