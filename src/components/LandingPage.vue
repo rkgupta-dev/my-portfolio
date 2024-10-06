@@ -11,7 +11,7 @@
       @scroll="handleScroll"
     >
       <b-navbar-brand
-        to="/"
+        href="/"
         :class="{ 'text-light': isScrolled, 'text-dark': !isScrolled }"
         >My Portfolio</b-navbar-brand
       >
