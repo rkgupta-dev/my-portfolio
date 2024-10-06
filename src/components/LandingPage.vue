@@ -4,7 +4,7 @@
     <b-navbar
       toggleable="lg"
       :class="{
-        'bg-info': isScrolled,
+        'bg-primary': isScrolled,
         'bg-light': !isScrolled,
       }"
       class="py-1 sticky-top shadow-sm"
