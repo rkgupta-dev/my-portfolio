@@ -3,7 +3,7 @@
     <b-container>
       <b-row class="mb-4 mt-4">
         <b-col>
-          <h1 class="text-center">About Me</h1>
+          <h1 class="text-center">About Me</h1>    <!--more-information-->
         </b-col>
       </b-row>
 

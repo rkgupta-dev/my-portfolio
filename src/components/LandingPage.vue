@@ -228,6 +228,7 @@
       </b-container>
     </div>
 
+    <!-- Blog Section -->
     <div id="blog" class="mt-5">
       <b-container>
         <b-row>
@@ -507,7 +508,7 @@ export default {
           title: "Portfolio Website",
           description:
             "A personal portfolio website built with Vue.js and BootstrapVue.",
-            img: require("@/assets/blog2.png"),
+          img: require("@/assets/blog2.png"),
           link: "#",
         },
         {
@@ -537,17 +538,15 @@ export default {
         {
           date: "07 July 2024",
           title: "Modern JavaScript Frameworks.",
-          excerpt:
-            "Choosing the Best JavaScript Framework for Your Project.",
-            img: require("@/assets/blog2.png"),
+          excerpt: "Choosing the Best JavaScript Framework for Your Project.",
+          img: require("@/assets/blog2.png"),
           link: "/blog-02",
         },
         {
           date: "09 Oct 2024",
           title: "Top 5 ways for learning web development.",
-          excerpt:
-            "Unlocking Your Path to Web Development Mastery.",
-            img: require("@/assets/blog3.png"),
+          excerpt: "Unlocking Your Path to Web Development Mastery.",
+          img: require("@/assets/blog3.png"),
           link: "/blog-03",
         },
       ],
