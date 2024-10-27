@@ -219,7 +219,7 @@
               <b-card-text>
                 {{ project.description }}
               </b-card-text>
-              <b-button variant="primary" :href="project.link" target="_blank">
+              <b-button variant="primary" :href="project.link">
                 View Project
               </b-button>
             </b-card>
@@ -505,11 +505,11 @@ export default {
       currentYear: new Date().getFullYear(),
       projects: [
         {
-          title: "Portfolio Website",
+          title: "E-Commerce Website",
           description:
-            "A personal portfolio website built with Vue.js and BootstrapVue.",
+            "A e-commerce website built with Vue.js and BootstrapVue.",
           img: require("@/assets/blog2.png"),
-          link: "#",
+          link: "/primebazaar-details",
         },
         {
           title: "Travel Blog",
