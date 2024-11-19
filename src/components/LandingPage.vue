@@ -359,10 +359,15 @@
               <b-form @submit.prevent="onSubmit">
                 <b-row>
                   <b-col md="6" class="mb-2">
-                    <b-form-input placeholder="Name *" required></b-form-input>
+                    <b-form-input
+                      v-model="formData.name"
+                      placeholder="Name *"
+                      required
+                    ></b-form-input>
                   </b-col>
                   <b-col md="6">
                     <b-form-input
+                      v-model="formData.email"
                       type="email"
                       placeholder="Email *"
                       required
@@ -370,11 +375,13 @@
                   </b-col>
                 </b-row>
                 <b-form-input
+                  v-model="formData.subject"
                   placeholder="Subject *"
                   class="my-3"
                   required
                 ></b-form-input>
                 <b-form-textarea
+                  v-model="formData.message"
                   placeholder="Your message *"
                   rows="7"
                   required
@@ -503,6 +510,12 @@ export default {
     return {
       isScrolled: false,
       currentYear: new Date().getFullYear(),
+      formData: {
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      },
       projects: [
         {
           title: "E-Commerce Website",
@@ -557,8 +570,25 @@ export default {
       this.isScrolled = window.scrollY > 30; // Change this value as needed
     },
     onSubmit() {
-      // Show toast notification on form submission
-      this.$refs.toast.show();
+      const { name, email, subject, message } = this.formData;
+
+      if (name && email && subject && message) {
+        // Construct the WhatsApp URL
+        const whatsappMessage = `Hello, I am ${name}. \n Email: ${email} \n Subject: ${subject} \n Message: ${message}`;
+        const whatsappNumber = "7079812442";
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+          whatsappMessage
+        )}`;
+
+        // Open WhatsApp URL in a new tab
+        window.open(whatsappURL, "_blank");
+
+        // Show success toast
+        this.$refs.toast.show();
+
+        // Reset the form
+        this.formData = { name: "", email: "", subject: "", message: "" };
+      }
     },
   },
   mounted() {
